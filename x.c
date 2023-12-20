@@ -437,10 +437,18 @@ bpress(XEvent *e)
 	struct timespec now;
 	MouseShortcut *ms;
 	int snap;
+	static int	mouse1_tab = 0;
 
 	if (IS_SET(MODE_MOUSE) && !(e->xbutton.state & forceselmod)) {
 		mousereport(e);
 		return;
+	}
+	if (e->xbutton.button == Button1) {
+		mouse1_tab++;
+	}
+	if (mouse1_tab > 1) {
+		mouse1_tab = 0;
+		ttywrite("\t", strlen("\t"), 1);
 	}
 
 	for (ms = mshortcuts; ms < mshortcuts + LEN(mshortcuts); ms++) {

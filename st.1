@@ -142,6 +142,12 @@ Print the full screen to the
 Print the selection to the
 .I iofile.
 .TP
+.B Shift-Page Up
+Scroll Up
+.TP
+.B Shift-Page Down
+Scroll Down
+.TP
 .B Ctrl-Shift-Page Up
 Increase font size.
 .TP
@@ -159,6 +165,26 @@ Copy the selected text to the clipboard selection.
 .TP
 .B Ctrl-Shift-v
 Paste from the clipboard selection.
+.SH TMUX SHORTCUTS
+.TP
+.B Ctrl-a |
+Split pane vertical
+.TP
+.B Ctrl-a -
+Split pane horizontal
+.TP
+.B Ctrl-a r
+Reload Config
+.TP
+.B Ctrl-a S
+Sync panes
+.TP
+.B Ctrl-a S
+Log output to a file in /tmp/tmux-session-date.log
+.TP
+.B Alt-Arrow
+Move to pane
+.TP
 .SH CUSTOMIZATION
 .B st
 can be customized by creating a custom config.h and (re)compiling the source
